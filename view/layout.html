@@ -1,0 +1,36 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/tw/output.css" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.11"
+      integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <!-- <body
+    class="bg-pattern bg-no-repeat bg-cover flex items-center justify-center min-h-dvh p-4"
+  >
+    <section
+      class="relative max-w-[900px] w-full bg-white/10 backdrop-blur-sm rounded-xl p-4 min-h-[calc(100dvh-2rem)]"
+    >
+      <div
+        class="absolute inset-2 border-main-red border-[1px] rounded-lg"
+      ></div>
+      {{template "body" .}}
+    </section>
+  </body> -->
+  <body class="bg-pattern bg-cover min-h-dvh min-w-dvw p-4">
+    <div
+      class="relative bg-white/50 backdrop-blur-sm shadow-[2px_4px_12px_4px_rgba(0,0,0,.2)] rounded-lg w-full h-full max-w-[800px] mx-auto p-6 pt-8"
+    >
+      <div class="absolute inset-[.4rem] rounded-md border-[2px] -z-50"></div>
+      {{ template "body" . }}
+    </div>
+  </body>
+</html>
+{{end}}
