@@ -7,7 +7,7 @@
       alt="profile picture"
       class="w-32 h-32 rounded-full"
     />
-    <form method="POST" action="/dashboard/login" class="flex flex-col gap-2">
+    <form x-data="{password:''}" hx-post="/login" hx-target="#message" class="flex flex-col gap-2">
       <label for="password"> Enter your password to access dashboard </label>
       <input
         class="bg-gray-200 px-3 py-2 rounded-md"
@@ -15,12 +15,15 @@
         id="password"
         name="password"
         placeholder="yourpassword"
+        x-model="password"
       />
       <div id="message"></div>
       <div class="flex justify-end">
         <button
           class="bg-main-red text-white px-3 py-2 rounded-md"
+          x-bind:class="password.length < 6 ? 'opacity-70' : 'opacity-100'"
           type="submit"
+          x-bind:disabled="password.length < 6"
         >
           Login
         </button>
